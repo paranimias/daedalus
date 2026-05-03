@@ -13,10 +13,10 @@ jobs:
 
       - name: Build Jekyll
         run: |
+          cp -r . /tmp/build
+          cd /tmp/build
           export GEM_HOME=/tmp/bundle
-          export BUNDLE_PATH=/tmp/bundle
           
-          bundle config set --local frozen 'true'
           
           bundle install
           bundle exec jekyll build -d /tmp/_site
