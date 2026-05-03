@@ -13,9 +13,10 @@ jobs:
 
       - name: Build Jekyll
         run: |
-          export GEM_HOME=$HOME/gems
+          export GEM_HOME=/tmp/bundle
+          export BUNDLE_PATH=/tmp/bundle
           export PATH=$GEM_HOME/bin:$PATH
-          bundle install --path vendor/bundle
+          bundle install
           bundle exec jekyll build -d ./_site
 
       - name: Install SSH and rsync
@@ -32,7 +33,7 @@ jobs:
           
           # Escanea la llave del host para evitar el prompt de confirmación
           # Cambia la IP por la IP real de tu servidor NixOS
-          ssh-keyscan 192.168.2.19 >> ~/.ssh/known_hosts 
-          
+          echo "StrictHostKeyChecking no" >> ~/.ssh/config
+
           # Sincroniza. Cambia 'joel' por tu usuario y la IP por la tuya.
           rsync -e "ssh -i ~/.ssh/id_ed25519" -avz --delete ./_site/ joel@192.168.2.19:/var/www/blog/
