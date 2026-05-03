@@ -19,6 +19,6 @@ jobs:
 
           bundle install
 
-          mkdir -p /var/www/blog
+          rm -rf /var/www/blog/*
 
           bundle exec jekyll build -d /var/www/blog
