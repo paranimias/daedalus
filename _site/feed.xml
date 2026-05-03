@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>daedalus</title>
+    <description>Daedalus Blog</description>
+    <link>/</link>
+    <atom:link href="/feed.xml" rel="self" type="application/rss+xml" />
+    <pubDate>Sun, 03 May 2026 16:27:24 -0500</pubDate>
+    <lastBuildDate>Sun, 03 May 2026 16:27:24 -0500</lastBuildDate>
+    <generator>Jekyll v4.4.1</generator>
+    
+      <item>
+        <title>Hola c:</title>
+        <description>&lt;!-- Spanish Version --&gt;
+&lt;div class=&quot;es post-container&quot;&gt;
+  &lt;p&gt;Soy un estudiante de Ciencias de la Computación amante del software libre y neovim.&lt;/p&gt;
+
+  &lt;p&gt;Los últimos años me he dedicado a desarrollar mi espacio de trabajo y en conocer lo más que pueda mis
+  herramientas para poder mejorar la organización de la información y la producción de conocimiento.&lt;/p&gt;
+
+  &lt;p&gt;Me deprime la idea de que en algún momento no voy a tener más sitcoms por ver y que hay música que nunca voy
+  a escuchar&lt;/p&gt;
+&lt;/div&gt;
+
+&lt;!-- English Version --&gt;
+&lt;div class=&quot;en post-container&quot;&gt;
+  &lt;p&gt;I’m a Computer Science student that loves libre software and neovim.&lt;/p&gt;
+
+  &lt;p&gt;The last couple years I’ve dedicated myself to develop my workspace and know all my tools to the bone so I
+  can enhance my information archive and knowledge production.&lt;/p&gt;
+
+  &lt;p&gt;The idea that one day I won’t have more sitcoms to watch and that I will never listen to music from some
+  cultures depresses me.&lt;/p&gt;
+
+&lt;/div&gt;
+</description>
+        <pubDate>Mon, 23 Mar 2026 00:00:00 -0500</pubDate>
+        <link>/2026/03/23/first/</link>
+        <guid isPermaLink="true">/2026/03/23/first/</guid>
+        
+        <category>presentation</category>
+        
+        
+      </item>
+    
+  </channel>
+</rss>

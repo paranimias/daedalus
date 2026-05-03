@@ -3,25 +3,15 @@ name: Deploy Blog
 on:
   push:
     branches:
-      - master
+      - main
 
 jobs:
-  build-and-deploy:
+  deploy:
     runs-on: native
     steps:
-      - name: Checkout
-        uses: actions/checkout@v4
+      - uses: actions/checkout@v4
 
-      - name: Build y Deploy
+      - name: Deploy
         run: |
-          /run/current-system/sw/bin/nix-shell \
-            -I nixpkgs=https://github.com/nixos/nixpkgs/archive/ac62194c3917d5f474c1a844b6fd6da2db95077d.tar.gz \
-            --packages ruby bundler jekyll gcc gnumake pkg-config openssl zlib \
-            --run '
-              bundle config set --local path "vendor/bundle"
-              bundle install
-              bundle exec jekyll build --destination /tmp/blog-${{ github.run_id }}
-            '
           /run/current-system/sw/bin/rsync -a --delete \
-            /tmp/blog-${{ github.run_id }}/ /var/www/blog/
-          rm -rf /tmp/blog-${{ github.run_id }}
+            ${{ gitea.workspace }}/_site/ /var/www/blog/
