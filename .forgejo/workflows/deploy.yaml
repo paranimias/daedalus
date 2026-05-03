@@ -3,25 +3,26 @@ name: Deploy Blog
 on:
   push:
     branches:
-      - master  # o master, el que uses
+      - main
 
 jobs:
   build-and-deploy:
-    runs-on: native  # <-- CLAVE: corre directo en el host, no en Docker
+    runs-on: native
     steps:
       - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Build Jekyll
+      - name: Install gems
         run: |
           bundle config set --local path 'vendor/bundle'
           bundle install
-          bundle exec jekyll build --destination /tmp/blog-build-$$
 
-      - name: Deploy to /var/www/blog
+      - name: Build Jekyll
         run: |
-          # Reemplaza el contenido atómicamente
-          rsync -a --delete /tmp/blog-build-$$/ /var/www/blog/
-          rm -rf /tmp/blog-build-$$
-          # Asegura permisos correctos
+          bundle exec jekyll build --destination /tmp/blog-build-${{ github.run_id }}
+
+      - name: Deploy
+        run: |
+          rsync -a --delete /tmp/blog-build-${{ github.run_id }}/ /var/www/blog/
+          rm -rf /tmp/blog-build-${{ github.run_id }}
           chmod -R 755 /var/www/blog
