@@ -3,7 +3,7 @@ name: Deploy Blog
 on:
   push:
     branches:
-      - main  # o master, el que uses
+      - master  # o master, el que uses
 
 jobs:
   build-and-deploy:
