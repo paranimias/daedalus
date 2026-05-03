@@ -7,7 +7,7 @@ header-img-credit-href: "https://artvee.com/dl/the-cat-at-play/"
 email: "joeljarcor@gmail.com"
 description: "Daedalus Blog"
 keyword: "Daedalus, Blog"
-url: "" # your host, for absolute URL
+url: "blog.paranimias.dev" # your host, for absolute URL
 baseurl: "" # for example, '/blog' if your blog hosted on 'host/blog'
 
 # Publish posts or collection documents with a future date.
