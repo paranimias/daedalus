@@ -13,7 +13,9 @@ jobs:
 
       - name: Build Jekyll
         run: |
-          bundle install
+          export GEM_HOME=$HOME/gems
+          export PATH=$GEM_HOME/bin:$PATH
+          bundle install --path vendor/bundle
           bundle exec jekyll build -d ./_site
 
       - name: Install SSH and rsync
