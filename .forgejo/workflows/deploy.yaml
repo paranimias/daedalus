@@ -11,19 +11,16 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
-        # comentario
 
       - name: Install gems
         run: |
           bundle config set --local path 'vendor/bundle'
           bundle install
 
-      - name: Build Jekyll
-        run: |
-          bundle exec jekyll build --destination /tmp/blog-build-${{ github.run_id }}
+      - name: Build
+        run: bundle exec jekyll build --destination /tmp/blog-${{ github.run_id }}
 
       - name: Deploy
         run: |
-          rsync -a --delete /tmp/blog-build-${{ github.run_id }}/ /var/www/blog/
-          rm -rf /tmp/blog-build-${{ github.run_id }}
-          chmod -R 755 /var/www/blog
+          rsync -a --delete /tmp/blog-${{ github.run_id }}/ /var/www/blog/
+          rm -rf /tmp/blog-${{ github.run_id }}
