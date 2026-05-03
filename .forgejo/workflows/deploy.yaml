@@ -36,7 +36,7 @@ jobs:
     runs-on: native # Esta etiqueta debe coincidir con la del host en nix
     steps:
       - name: Download Artifact
-        uses: actions/download-artifact@v4
+        uses: actions/download-artifact@v3
         with:
           name: site-files
           path: ./dist
