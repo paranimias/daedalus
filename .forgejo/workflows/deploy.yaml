@@ -1,41 +1,27 @@
-name: Build and Deploy via Rsync
+name: Deploy Blog
 
-on: [push]
+on:
+  push:
+    branches:
+      - main  # o master, el que uses
 
 jobs:
   build-and-deploy:
-    runs-on: ubuntu-latest
-    container:
-      image: jekyll/builder:latest
+    runs-on: native  # <-- CLAVE: corre directo en el host, no en Docker
     steps:
       - name: Checkout
         uses: actions/checkout@v4
 
       - name: Build Jekyll
         run: |
-          cp -r . /tmp/build
-          cd /tmp/build
-          export GEM_HOME=/tmp/bundle
-          
-          
+          bundle config set --local path 'vendor/bundle'
           bundle install
-          bundle exec jekyll build -d /tmp/_site
+          bundle exec jekyll build --destination /tmp/blog-build-$$
 
-      - name: Install SSH and rsync
+      - name: Deploy to /var/www/blog
         run: |
-          apk add --no-cache rsync openssh-client
-
-      - name: Deploy via Rsync
-        env:
-          SSH_KEY: ${{ secrets.BLOG_SSH_PRIVATE_KEY }}
-        run: |
-          mkdir -p ~/.ssh
-          echo "$SSH_KEY" > ~/.ssh/id_ed25519
-          chmod 600 ~/.ssh/id_ed25519
-          
-          # Escanea la llave del host para evitar el prompt de confirmación
-          # Cambia la IP por la IP real de tu servidor NixOS
-          ssh-keyscan 192.168.2.19 >> ~/.ssh/known_hosts
-
-          # Sincroniza. Cambia 'joel' por tu usuario y la IP por la tuya.
-          rsync -e "ssh -i ~/.ssh/id_ed25519" -avz --delete /tmp/_site/ joel@192.168.2.19:/var/www/blog/
+          # Reemplaza el contenido atómicamente
+          rsync -a --delete /tmp/blog-build-$$/ /var/www/blog/
+          rm -rf /tmp/blog-build-$$
+          # Asegura permisos correctos
+          chmod -R 755 /var/www/blog
