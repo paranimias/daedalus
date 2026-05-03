@@ -5,7 +5,7 @@ on:
     branches: [ master ]
 
 jobs:
-  build:
+  build_and_deploy:
     runs-on: ubuntu-latest # Esto le dice al runner que use Docker
     container:
       image: jekyll/builder:latest
@@ -13,36 +13,12 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Install and Build
+      - name: Build and Copy
         run: |
           # El contenedor ya tiene gcc, make y ruby listo
           #
           chmod -R 777 .
 
-          bundle config set --local deployment 'false'
-
           bundle install
 
-          bundle exec jekyll build
-
-      - name: Upload Artifact
-        uses: actions/upload-artifact@v4
-        with:
-          name: site-files
-          path: _site/
-
-  deploy:
-    needs: build
-    runs-on: native # Esta etiqueta debe coincidir con la del host en nix
-    steps:
-      - name: Download Artifact
-        uses: actions/download-artifact@v3
-        with:
-          name: site-files
-          path: ./dist
-
-      - name: Copy to Web Folder
-        run: |
-          # Aquí el comando cp funcionará porque este paso corre en tu NixOS, no en Docker
-          cp -r ./dist/* /var/www/blog/
-          echo "Despliegue completado en /var/www/blog/"
+          bundle exec jekyll build -d /var/www/blog
