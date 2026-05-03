@@ -9,6 +9,11 @@ jobs:
   build-and-deploy:
     runs-on: native
     steps:
+      - name: Debug
+        run: |
+          echo "PATH=$PATH"
+          ls /run/current-system/sw/bin/ | grep bundle
+
       - name: Checkout
         uses: actions/checkout@v4
 
