@@ -2,14 +2,14 @@ name: Build and Deploy Jekyll
 on: [push]
 jobs:
   build:
-    runs-on: ubuntu-latest
+    runs-on: native
     steps:
       - uses: actions/checkout@v3
-      - name: Build Jekyll
+      - name: Build
         run: |
-          gem install jekyll bundler
           bundle install
           bundle exec jekyll build
-      - name: Deploy to Nginx folder
+      - name: Deploy
         run: |
-          cp -R _site/* /var/www/blog/
+          rm -rf /var/www/blog/*
+          cp -R _site/* /var/www/blog
