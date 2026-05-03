@@ -1,18 +1,36 @@
-name: Build and Deploy Jekyll
+name: Build and Deploy via Rsync
 
-on:
-  push:
-    branches: [ master ]
+on: [push]
 
 jobs:
-  build_and_deploy:
-    runs-on: ubuntu-latest # Esto le dice al runner que use Docker
+  build-and-deploy:
+    runs-on: ubuntu-latest
     container:
       image: jekyll/builder:latest
     steps:
-      - uses: actions/checkout@v4
-      - name: Build and Copy
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Build Jekyll
         run: |
-          chmod -R 777 .
           bundle install
-          bundle exec jekyll build -d /var/www/blog --force
+          bundle exec jekyll build -d ./_site
+
+      - name: Install SSH and rsync
+        run: |
+          apk add --no-cache rsync openssh-client
+
+      - name: Deploy via Rsync
+        env:
+          SSH_KEY: ${{ secrets.BLOG_SSH_PRIVATE_KEY }}
+        run: |
+          mkdir -p ~/.ssh
+          echo "$SSH_KEY" > ~/.ssh/id_ed25519
+          chmod 600 ~/.ssh/id_ed25519
+          
+          # Escanea la llave del host para evitar el prompt de confirmación
+          # Cambia la IP por la IP real de tu servidor NixOS
+          ssh-keyscan 192.168.2.19 >> ~/.ssh/known_hosts 
+          
+          # Sincroniza. Cambia 'joel' por tu usuario y la IP por la tuya.
+          rsync -e "ssh -i ~/.ssh/id_ed25519" -avz --delete ./_site/ joel@192.168.2.19:/var/www/blog/
