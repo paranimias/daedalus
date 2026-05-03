@@ -15,10 +15,10 @@ jobs:
 
       - name: Build and Copy
         run: |
-          # El contenedor ya tiene gcc, make y ruby listo
-          #
           chmod -R 777 .
 
           bundle install
+
+          mkdir -p /var/www/blog
 
           bundle exec jekyll build -d /var/www/blog
