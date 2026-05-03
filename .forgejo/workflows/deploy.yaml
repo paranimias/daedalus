@@ -3,7 +3,7 @@ name: Deploy Blog
 on:
   push:
     branches:
-      - master
+      - main
 
 jobs:
   build-and-deploy:
@@ -12,15 +12,15 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Install gems
+      - name: Build y Deploy
         run: |
-          /run/current-system/sw/bin/bundle config set --local path 'vendor/bundle'
-          /run/current-system/sw/bin/bundle install
-
-      - name: Build
-        run: /run/current-system/sw/bin/bundle exec jekyll build --destination /tmp/blog-${{ github.run_id }}
-
-      - name: Deploy
-        run: |
-          /run/current-system/sw/bin/rsync -a --delete /tmp/blog-${{ github.run_id }}/ /var/www/blog/
+          /run/current-system/sw/bin/nix-shell \
+            --packages ruby bundler jekyll gcc gnumake pkg-config openssl zlib \
+            --run '
+              bundle config set --local path "vendor/bundle"
+              bundle install
+              bundle exec jekyll build --destination /tmp/blog-${{ github.run_id }}
+            '
+          /run/current-system/sw/bin/rsync -a --delete \
+            /tmp/blog-${{ github.run_id }}/ /var/www/blog/
           rm -rf /tmp/blog-${{ github.run_id }}
