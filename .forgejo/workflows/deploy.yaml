@@ -15,4 +15,4 @@ jobs:
         run: |
           chmod -R 777 .
           bundle install
-          bundle exec jekyll build
+          bundle exec jekyll build -d /var/www/blog --force
