@@ -9,23 +9,18 @@ jobs:
   build-and-deploy:
     runs-on: native
     steps:
-      - name: Debug
-        run: |
-          echo "PATH=$PATH"
-          ls /run/current-system/sw/bin/ | grep bundle
-
       - name: Checkout
         uses: actions/checkout@v4
 
       - name: Install gems
         run: |
-          bundle config set --local path 'vendor/bundle'
-          bundle install
+          /run/current-system/sw/bin/bundle config set --local path 'vendor/bundle'
+          /run/current-system/sw/bin/bundle install
 
       - name: Build
-        run: bundle exec jekyll build --destination /tmp/blog-${{ github.run_id }}
+        run: /run/current-system/sw/bin/bundle exec jekyll build --destination /tmp/blog-${{ github.run_id }}
 
       - name: Deploy
         run: |
-          rsync -a --delete /tmp/blog-${{ github.run_id }}/ /var/www/blog/
+          /run/current-system/sw/bin/rsync -a --delete /tmp/blog-${{ github.run_id }}/ /var/www/blog/
           rm -rf /tmp/blog-${{ github.run_id }}
