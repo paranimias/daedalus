@@ -11,5 +11,6 @@ jobs:
           bundle exec jekyll build
       - name: Deploy
         run: |
+          # test
           rm -rf /var/www/blog/*
           cp -R _site/* /var/www/blog
