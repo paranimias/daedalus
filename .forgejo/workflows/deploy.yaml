@@ -16,7 +16,13 @@ jobs:
       - name: Install and Build
         run: |
           # El contenedor ya tiene gcc, make y ruby listo
+          #
+          chmod -R 777 .
+
+          bundle config set --local deployment 'false'
+
           bundle install
+
           bundle exec jekyll build
 
       - name: Upload Artifact
