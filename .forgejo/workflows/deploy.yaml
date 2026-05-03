@@ -10,16 +10,9 @@ jobs:
     container:
       image: jekyll/builder:latest
     steps:
-      - name: Checkout
-        uses: actions/checkout@v4
-
+      - uses: actions/checkout@v4
       - name: Build and Copy
         run: |
           chmod -R 777 .
-
           bundle install
-
-          mkdir -p /var/www/blog
-          rm -rf /var/www/blog/*
-
-          bundle exec jekyll build -d /var/www/blog
+          bundle exec jekyll build
