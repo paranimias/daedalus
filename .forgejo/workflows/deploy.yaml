@@ -15,6 +15,7 @@ jobs:
       - name: Build y Deploy
         run: |
           /run/current-system/sw/bin/nix-shell \
+            -I nixpkgs=https://github.com/nixos/nixpkgs/archive/ac62194c3917d5f474c1a844b6fd6da2db95077d.tar.gz \
             --packages ruby bundler jekyll gcc gnumake pkg-config openssl zlib \
             --run '
               bundle config set --local path "vendor/bundle"
