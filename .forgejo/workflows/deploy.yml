@@ -23,7 +23,7 @@ jobs:
       
       - name: Sincronizar a directorio de producción
         run: |
-          cp -r _site/* /var/www/blog/
+          cp -r _site/* /home/joel/blog/
       
       - name: Verificar construcción
         run: |
