@@ -1,0 +1,10 @@
+.git
+.gitignore
+.dockerignore
+Dockerfile
+.forgejo
+_site
+node_modules
+.bundle
+vendor
+.jekyll-cache

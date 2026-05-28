@@ -14,7 +14,7 @@ RUN apt-get update && apt-get install -y \
 WORKDIR /site
  
 # Copiar Gemfile y Gemfile.lock (si existe)
-COPY Gemfile* ./
+COPY Gemfile Gemfile.lock* ./
  
 # Instalar las gemas de Jekyll
 RUN gem install bundler && \
