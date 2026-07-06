@@ -180,6 +180,9 @@ self.addEventListener('fetch', event => {
       event.respondWith(fetchHelper.cacheFirst(event.request.url))
       return;
     }
+    if (e.request.url.includes('lastfm.html') || e.request.url.includes('vercel.app')) {
+      return;
+    }
 
     // Stale-while-revalidate for possiblily dynamic content
     // similar to HTTP's stale-while-revalidate: https://www.mnot.net/blog/2007/12/12/stale
