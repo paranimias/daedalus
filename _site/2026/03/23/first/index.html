@@ -30,8 +30,8 @@
     <meta property="article:tag" content="presentation">
     
     
-    <meta property="og:image" content="http://localhost:4000/img/paranimias.webp">
-    <meta property="og:url" content="http://localhost:4000/2026/03/23/first/">
+    <meta property="og:image" content="blog.paranimias.dev/img/paranimias.webp">
+    <meta property="og:url" content="blog.paranimias.dev/2026/03/23/first/">
     <meta property="og:site_name" content="Daedalus">
 
     <title>Hola c: - Daedalus</title>
@@ -43,13 +43,13 @@
     <link rel="shortcut icon" href="/img/favicon.ico">
 
     <!-- Canonical URL -->
-    <link rel="canonical" href="http://localhost:4000/2026/03/23/first/">
+    <link rel="canonical" href="blog.paranimias.dev/2026/03/23/first/">
 
     <!-- Bootstrap Core CSS -->
     <link rel="stylesheet" href=" /css/bootstrap.min.css">
 
     <!-- Custom CSS -->
-    <link rel="stylesheet" href=" /css/hux-blog.css">
+    <link rel="stylesheet" href=" /css/daedalus.css">
 
     <!-- Custom Fonts -->
     <!-- <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet" type="text/css"> -->
@@ -94,7 +94,7 @@
             </div>
 
             <!-- Collect the nav links, forms, and other content for toggling -->
-            <div id="huxblog_navbar">
+            <div id="daedalus_navbar">
                 <div class="navbar-collapse">
                     <ul class="nav navbar-nav navbar-right">
                         <li>
@@ -142,10 +142,10 @@
         // in high-perf jank-free CSS3 implementation
         var $body = document.body;
         var $toggle = document.querySelector('.navbar-toggle');
-        var $navbar = document.querySelector('#huxblog_navbar');
+        var $navbar = document.querySelector('#daedalus_navbar');
         var $collapse = document.querySelector('.navbar-collapse');
 
-        var __HuxNav__ = {
+        var __DaedalusNav__ = {
             close: function () {
                 $navbar.className = " ";
                 // wait until animation end.
@@ -165,9 +165,9 @@
         // Bind Event
         $toggle.addEventListener('click', function (e) {
             if ($navbar.className.indexOf('in') > 0) {
-                __HuxNav__.close()
+                __DaedalusNav__.close()
             } else {
-                __HuxNav__.open()
+                __DaedalusNav__.open()
             }
         })
 
@@ -178,14 +178,14 @@
          * $toggle/$collapse will break global delegation.
          * 
          * Instead, we use a 'e.target' filter to prevent handler
-         * added to document close HuxNav.  
+         * added to document close nav.  
          *
          * Also, we use 'click' instead of 'touchstart' as compromise
          */
         document.addEventListener('click', function (e) {
             if (e.target == $toggle) return;
             if (e.target.className == 'icon-bar') return;
-            __HuxNav__.close();
+            __DaedalusNav__.close();
         })
     </script>
 
@@ -243,7 +243,7 @@
                     <h1 class="post-title" data-en-title="Hello c:" data-es-title="Hola c:">Hola c:</h1>
                     
                     <h2 class="subheading"></h2>
-                    <span class="meta">Posted by paranimias on March 23, 2026</span>
+                    <span class="meta"> Publicado por paranimias el 23/03/2026</span>
                 </div>
             </div>
         </div>
@@ -593,7 +593,7 @@
 <script src=" /js/bootstrap.min.js "></script>
 
 <!-- Custom Theme JavaScript -->
-<script src=" /js/hux-blog.min.js "></script>
+<script src=" /js/daedalus.min.js "></script>
 
 <!-- Simple Jekyll Search -->
 <script src=" /js/simple-jekyll-search.min.js"></script>
