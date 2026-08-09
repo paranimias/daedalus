@@ -14,11 +14,14 @@
         "grunt-banner": "~0.2.3",
         "grunt-contrib-less": "^2.0.0",
         "grunt-contrib-uglify": "^4.0.1",
-        "grunt-contrib-watch": "^1.1.0"
+        "grunt-contrib-watch": "^1.1.0",
+        "gray-matter": "^4.0.3"
     },
     "scripts": {
         "start": "bundle exec jekyll serve",
-        "dev": "grunt watch & npm run start",
+        "dev": "grunt watch & npm run sync:obsidian:watch & npm run start",
+        "sync:obsidian": "node scripts/sync-obsidian-posts.js",
+        "sync:obsidian:watch": "node scripts/sync-obsidian-posts.js --watch",
         "push": "git push origin master --tag"
     }
 }
