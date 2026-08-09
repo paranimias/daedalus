@@ -3,8 +3,15 @@
     <div class="container">
         <div class="row">
             <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                {% comment %}
+                    layout:page with the sidebar on (home, about) already shows
+                    the SNS links right under the Last.fm widget, so skip the
+                    duplicate here.
+                {% endcomment %}
+                {% unless page.layout == "page" and site.sidebar != false %}
                 <!-- SNS Link -->
                 {% include sns-links.html center=true %}
+                {% endunless %}
 
                 <p class="copyright text-muted">
                     Copyright &copy; {{ site.title }} {{ site.time | date: '%Y' }}
@@ -94,7 +101,7 @@
     async('{{ "/js/jquery.tagcloud.js" | prepend: site.baseurl }}', function () {
         $.fn.tagcloud.defaults = {
             //size: {start: 1, end: 1, unit: 'em'},
-            color: { start: '#bbbbee', end: '#2f93b4' },
+            color: { start: '#7c6f64', end: '#89b482' },
         };
         $('#tag_cloud a').tagcloud();
     })
@@ -320,6 +327,6 @@
   import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs';
   mermaid.initialize({ 
     startOnLoad: true,
-    theme: 'default' // Puedes cambiarlo a 'dark' o 'forest'
+    theme: 'dark'
   });
 </script>

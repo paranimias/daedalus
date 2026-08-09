@@ -5,7 +5,7 @@
   bottom: 0;
   left: 0;
   z-index: 100;
-  background: #fff;
+  background: @body-bg;
   -webkit-transition: all 400ms cubic-bezier(0.32, 1, 0.23, 1);
   transition: all 400ms cubic-bezier(0.32, 1, 0.23, 1);
   -webkit-transform: translate(0, 100%);
@@ -54,13 +54,21 @@
     outline: none;
     padding: 0;
     margin: 0;
+    background: transparent;
     // poorman's reset end
 
     width: 100%;
     font-size: 30px;
     font-weight: bold;
     color: @gray-dark;
-   
+
+    // browsers paint a placeholder in a much dimmer gray by default;
+    // make sure it stays readable against the dark overlay too
+    &::placeholder {
+      color: @gray-light;
+      opacity: 1;
+    }
+
     @media only screen and (min-width: 768px) {
       margin-left: 20px;
     }
@@ -74,11 +82,20 @@
   }
 }
 
-.search-icon a,
-.search-icon-close {
+.search-icon a {
+  // sits on top of the hero photo in the navbar
   cursor: pointer;
   font-size: 30px;
-  color: #311e3e;
+  color: @white-faded;
+  -webkit-transition: all 0.25s;
+  transition: all 0.25s;
+}
+
+.search-icon-close {
+  // sits on the (dark) full-page search overlay
+  cursor: pointer;
+  font-size: 30px;
+  color: @gray-dark;
   -webkit-transition: all 0.25s;
   transition: all 0.25s;
 }

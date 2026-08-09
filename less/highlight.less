@@ -1,24 +1,26 @@
-// Atom's One Dark theme for Jekyll
-// Credits: https://github.com/mgyongyosi/OneDarkJekyll/
+@import "variables.less";
+
+// Gruvbox Material Dark syntax highlighting theme for Rouge.
+// Colors: https://github.com/sainnhe/gruvbox-material
 
 .highlight,
 pre.highlight {
-  background: #282c34;
-  color: #abb2bf;
+  background: @surface-bg;
+  color: @gray-dark;
 }
 .highlight pre {
-  background: #282c34;
+  background: @surface-bg;
 }
 .highlight .hll {
-  background: #282c34;
+  background: @surface-bg;
 }
 .highlight .c {
-  color: #5c6370;
+  color: @gm-grey1;
   font-style: italic;
 }
 .highlight .err {
-  color: #960050;
-  background-color: #1e0010;
+  color: @gm-red;
+  background-color: @gm-bg-diff-red;
 }
 .language-coq .highlight .err {
   // Hux: a temp workaround to fix for Coq math symbol
@@ -27,34 +29,34 @@ pre.highlight {
   background-color: transparent;
 }
 .highlight .k {
-  color: #c678dd;
+  color: @gm-red;
 }
 .highlight .l {
-  color: #98c379;
+  color: @gm-purple;
 }
 .highlight .n {
-  color: #abb2bf;
+  color: @gray-dark;
 }
 .highlight .o {
-  color: #abb2bf;
+  color: @gray-dark;
 }
 .highlight .p {
-  color: #abb2bf;
+  color: @gray-dark;
 }
 .highlight .cm {
-  color: #5c6370;
+  color: @gm-grey1;
   font-style: italic;
 }
 .highlight .cp {
-  color: #5c6370;
+  color: @gm-grey1;
   font-style: italic;
 }
 .highlight .c1 {
-  color: #5c6370;
+  color: @gm-grey1;
   font-style: italic;
 }
 .highlight .cs {
-  color: #5c6370;
+  color: @gm-grey1;
   font-style: italic;
 }
 .highlight .ge {
@@ -64,148 +66,148 @@ pre.highlight {
   font-weight: 700;
 }
 .highlight .kc {
-  color: #c678dd;
+  color: @gm-red;
 }
 .highlight .kd {
-  color: #c678dd;
+  color: @gm-red;
 }
 .highlight .kn {
-  color: #c678dd;
+  color: @gm-red;
 }
 .highlight .kp {
-  color: #c678dd;
+  color: @gm-red;
 }
 .highlight .kr {
-  color: #c678dd;
+  color: @gm-red;
 }
 .highlight .kt {
-  color: #c678dd;
+  color: @gm-yellow;
 }
 .highlight .ld {
-  color: #98c379;
+  color: @gm-green;
 }
 .highlight .m {
-  color: #d19a66;
+  color: @gm-purple;
 }
 .highlight .s {
-  color: #98c379;
+  color: @gm-green;
 }
 .highlight .na {
-  color: #d19a66;
+  color: @gm-yellow;
 }
 .highlight .nb {
-  color: #e5c07b;
+  color: @gm-yellow;
 }
 .highlight .nc {
-  color: #e5c07b;
+  color: @gm-yellow;
 }
 .highlight .no {
-  color: #e5c07b;
+  color: @gm-yellow;
 }
 .highlight .nd {
-  color: #e5c07b;
+  color: @gm-aqua;
 }
 .highlight .ni {
-  color: #e5c07b;
+  color: @gm-yellow;
 }
 .highlight .ne {
-  color: #e5c07b;
+  color: @gm-yellow;
 }
 .highlight .nf {
-  color: #abb2bf;
+  color: @gm-blue;
 }
 .highlight .nl {
-  color: #e5c07b;
+  color: @gm-yellow;
 }
 .highlight .nn {
-  color: #abb2bf;
+  color: @gray-dark;
 }
 .highlight .nx {
-  color: #abb2bf;
+  color: @gray-dark;
 }
 .highlight .py {
-  color: #e5c07b;
+  color: @gm-yellow;
 }
 .highlight .nt {
-  color: #e06c75;
+  color: @gm-red;
 }
 .highlight .nv {
-  color: #e5c07b;
+  color: @gm-yellow;
 }
 .highlight .ow {
   font-weight: 700;
 }
 .highlight .w {
-  color: #f8f8f2;
+  color: @gray-light;
 }
 .highlight .mf {
-  color: #d19a66;
+  color: @gm-purple;
 }
 .highlight .mh {
-  color: #d19a66;
+  color: @gm-purple;
 }
 .highlight .mi {
-  color: #d19a66;
+  color: @gm-purple;
 }
 .highlight .mo {
-  color: #d19a66;
+  color: @gm-purple;
 }
 .highlight .sb {
-  color: #98c379;
+  color: @gm-green;
 }
 .highlight .sc {
-  color: #98c379;
+  color: @gm-green;
 }
 .highlight .sd {
-  color: #98c379;
+  color: @gm-green;
 }
 .highlight .s2 {
-  color: #98c379;
+  color: @gm-green;
 }
 .highlight .se {
-  color: #98c379;
+  color: @gm-green;
 }
 .highlight .sh {
-  color: #98c379;
+  color: @gm-green;
 }
 .highlight .si {
-  color: #98c379;
+  color: @gm-green;
 }
 .highlight .sx {
-  color: #98c379;
+  color: @gm-green;
 }
 .highlight .sr {
-  color: #56b6c2;
+  color: @gm-aqua;
 }
 .highlight .s1 {
-  color: #98c379;
+  color: @gm-green;
 }
 .highlight .ss {
-  color: #56b6c2;
+  color: @gm-aqua;
 }
 .highlight .bp {
-  color: #e5c07b;
+  color: @gm-yellow;
 }
 .highlight .vc {
-  color: #e5c07b;
+  color: @gm-yellow;
 }
 .highlight .vg {
-  color: #e5c07b;
+  color: @gm-yellow;
 }
 .highlight .vi {
-  color: #e06c75;
+  color: @gm-red;
 }
 .highlight .il {
-  color: #d19a66;
+  color: @gm-purple;
 }
 .highlight .gu {
-  color: #75715e;
+  color: @gm-grey0;
 }
 .highlight .gd {
-  color: #f92672;
+  color: @gm-red;
 }
 .highlight .gi {
-  color: #a6e22e;
+  color: @gm-green;
 }
 
 // Customize for Hux Blog
@@ -215,7 +217,7 @@ pre.highlight {
   pre {
     font-size: 14px;
     line-height: 1.5;
-    color: #555;
+    color: @gray-light;
     background: transparent;
     border: 0;
     margin: 0;
@@ -230,7 +232,7 @@ pre.highlight {
   }
   .rouge-code {
     pre {
-      color: #abb2bf; // default color for nil-lang code
+      color: @gray-dark; // default color for nil-lang code
     }
   }
   .table-responsive {

@@ -18,8 +18,8 @@
     <meta property="og:description"
         content="/ˈdae̯.da.ɫʊs/">
     
-    <meta property="og:image" content="blog.paranimias.dev/img/paranimias.webp">
-    <meta property="og:url" content="blog.paranimias.dev/">
+    <meta property="og:image" content="http://localhost:4000/img/paranimias.webp">
+    <meta property="og:url" content="http://localhost:4000/">
     <meta property="og:site_name" content="Daedalus">
 
     <title>Daedalus</title>
@@ -31,7 +31,7 @@
     <link rel="shortcut icon" href="/img/favicon.ico">
 
     <!-- Canonical URL -->
-    <link rel="canonical" href="blog.paranimias.dev/">
+    <link rel="canonical" href="http://localhost:4000/">
 
     <!-- Bootstrap Core CSS -->
     <link rel="stylesheet" href=" /css/bootstrap.min.css">
@@ -187,9 +187,7 @@
   <div class="search-main container">
     <div class="row">
       <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-        <form></form>
         <input type="text" id="search-input" placeholder="$ grep...">
-        </form>
         <div id="search-results" class="mini-post-list"></div>
       </div>
     </div>
@@ -311,49 +309,6 @@
     
     <p>Computer Scientist<br/>Linux and Vim enthusiast</p>
     
-    <!-- SNS Link -->
-    
-
-
-<ul class="list-inline">
-
-
-  
-  
-  <li>
-    <a href="https://twitter.com/paranimias">
-      <span class="fa-stack fa-lg">
-        <i class="fa fa-circle fa-stack-2x"></i>
-        <i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
-      </span>
-    </a>
-  </li>
-  
-
-  
-  
-  <li>
-    <a target="_blank" href="https://github.com/paranimias">
-      <span class="fa-stack fa-lg">
-        <i class="fa fa-circle fa-stack-2x"></i>
-        <i class="fa fa-github fa-stack-1x fa-inverse"></i>
-      </span>
-    </a>
-  </li>
-  
-  
-  
-  <li>
-    <a target="_blank" href="https://www.last.fm/user/JoelJarcor">
-      <span class="fa-stack fa-lg">
-        <i class="fa fa-circle fa-stack-2x"></i>
-        <i class="fa fa-lastfm fa-stack-1x fa-inverse"></i>
-      </span>
-    </a>
-  </li>
-  
-</ul>
-
   </div>
 </section>
 
@@ -366,14 +321,14 @@
 
     <div id="lastfm-widget" style="
         position: relative;
-        background-color: #2a2a2a;
+        background-color: #32302f;
         border-radius: 4px;
         overflow: hidden;
         height: 172px;
         width: 172px;
         display: flex;
         align-items: flex-end;
-        border: 1px solid #333;
+        border: 1px solid #45403d;
         color: white;
         background-size: cover;
         background-position: center;
@@ -434,7 +389,7 @@
                 if (albumArt) widget.style.backgroundImage = `url(${albumArt})`;
                 
                 if (track["@attr"] && track["@attr"].nowplaying === "true") {
-                    statusEl.innerHTML = '<i class="fa fa-music" style="color: #1ed760;"></i> NOW PLAYING';
+                    statusEl.innerHTML = '<i class="fa fa-music" style="color: #a9b665;"></i> NOW PLAYING';
                 } else if (track.date && track.date.uts) {
                     const timeString = timeAgo(track.date.uts);
                     statusEl.innerHTML = `<i class="fa fa-history"></i> ${timeString}`;
@@ -470,47 +425,11 @@
 </script>
 
 
-      <!-- Friends Blog -->
+      <!-- SNS Link -->
       
-<hr>
-<h5>COMPAS c:</h5>
+
+
 <ul class="list-inline">
-  
-  <li><a href="https://github.com/spartan14799/">Juan Huertas</a></li>
-  
-  <li><a href="http://instagram.com/vaschita">Valentina 💘</a></li>
-  
-</ul>
-
-
-
-      <!-- Ads -->
-      <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-<!-- first shot -->
-<ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-6487568398225121" data-ad-slot="4814308751"
-     data-ad-format="auto" data-full-width-responsive="true"></ins>
-<script>
-     (adsbygoogle = window.adsbygoogle || []).push({});
-</script>
-
-    </div>
-    
-  </div>
-</div>
-
-
-
-
-    <!-- Footer -->
-<footer>
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-                <!-- SNS Link -->
-                
-
-
-<ul class="list-inline text-center">
 
 
   
@@ -549,6 +468,45 @@
   
 </ul>
 
+
+      <!-- Friends Blog -->
+      
+<hr>
+<h5>COMPAS c:</h5>
+<ul class="list-inline">
+  
+  <li><a href="https://github.com/spartan14799/">Juan Huertas</a></li>
+  
+  <li><a href="http://instagram.com/vaschita">Valentina 💘</a></li>
+  
+</ul>
+
+
+
+      <!-- Ads -->
+      <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- first shot -->
+<ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-6487568398225121" data-ad-slot="4814308751"
+     data-ad-format="auto" data-full-width-responsive="true"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+
+    </div>
+    
+  </div>
+</div>
+
+
+
+
+    <!-- Footer -->
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                
+                
 
                 <p class="copyright text-muted">
                     Copyright &copy; daedalus 2026
@@ -775,15 +733,10 @@
   import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs';
   mermaid.initialize({ 
     startOnLoad: true,
-    theme: 'default' // Puedes cambiarlo a 'dark' o 'forest'
+    theme: 'dark'
   });
 </script>
 
-
-
-<!-- Image to hack wechat -->
-<!-- <img src="/img/icon_wechat.png" width="0" height="0" /> -->
-<!-- Migrate from head to bottom, no longer block render and still work -->
 
 </body>
 

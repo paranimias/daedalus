@@ -18,8 +18,8 @@
     <meta property="og:description"
         content="你来到了没有知识的荒原 :(">
     
-    <meta property="og:image" content="blog.paranimias.dev/img/paranimias.webp">
-    <meta property="og:url" content="blog.paranimias.dev/404.html">
+    <meta property="og:image" content="http://localhost:4000/img/paranimias.webp">
+    <meta property="og:url" content="http://localhost:4000/404.html">
     <meta property="og:site_name" content="Daedalus">
 
     <title>404 - Daedalus</title>
@@ -31,7 +31,7 @@
     <link rel="shortcut icon" href="/img/favicon.ico">
 
     <!-- Canonical URL -->
-    <link rel="canonical" href="blog.paranimias.dev/404.html">
+    <link rel="canonical" href="http://localhost:4000/404.html">
 
     <!-- Bootstrap Core CSS -->
     <link rel="stylesheet" href=" /css/bootstrap.min.css">
@@ -187,9 +187,7 @@
   <div class="search-main container">
     <div class="row">
       <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-        <form></form>
         <input type="text" id="search-input" placeholder="$ grep...">
-        </form>
         <div id="search-results" class="mini-post-list"></div>
       </div>
     </div>
@@ -249,6 +247,8 @@
     <div class="container">
         <div class="row">
             <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                
+                
                 <!-- SNS Link -->
                 
 
@@ -292,6 +292,7 @@
   
 </ul>
 
+                
 
                 <p class="copyright text-muted">
                     Copyright &copy; daedalus 2026
@@ -518,15 +519,10 @@
   import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs';
   mermaid.initialize({ 
     startOnLoad: true,
-    theme: 'default' // Puedes cambiarlo a 'dark' o 'forest'
+    theme: 'dark'
   });
 </script>
 
-
-
-<!-- Image to hack wechat -->
-<!-- <img src="/img/icon_wechat.png" width="0" height="0" /> -->
-<!-- Migrate from head to bottom, no longer block render and still work -->
 
 </body>
 

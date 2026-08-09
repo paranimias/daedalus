@@ -5,14 +5,14 @@
 
     <div id="lastfm-widget" style="
         position: relative;
-        background-color: #2a2a2a;
+        background-color: #32302f;
         border-radius: 4px;
         overflow: hidden;
         height: 172px;
         width: 172px;
         display: flex;
         align-items: flex-end;
-        border: 1px solid #333;
+        border: 1px solid #45403d;
         color: white;
         background-size: cover;
         background-position: center;
@@ -73,7 +73,7 @@
                 if (albumArt) widget.style.backgroundImage = `url(${albumArt})`;
                 
                 if (track["@attr"] && track["@attr"].nowplaying === "true") {
-                    statusEl.innerHTML = '<i class="fa fa-music" style="color: #1ed760;"></i> NOW PLAYING';
+                    statusEl.innerHTML = '<i class="fa fa-music" style="color: #a9b665;"></i> NOW PLAYING';
                 } else if (track.date && track.date.uts) {
                     const timeString = timeAgo(track.date.uts);
                     statusEl.innerHTML = `<i class="fa fa-history"></i> ${timeString}`;

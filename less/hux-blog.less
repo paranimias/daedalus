@@ -13,6 +13,7 @@ body {
   font-size: 16px;
   // Hux mpdify to 16px (Mobile First), and increase to 20px while 768+ width
   color: @gray-dark;
+  background-color: @body-bg;
   //-webkit-user-select:text; //对于 Blog 还是先不开启这句。
   overflow-x: hidden;
 
@@ -64,7 +65,7 @@ article {
   overflow: hidden;
 }
 blockquote {
-  color: gray;
+  color: @brand-gray;
   font-style: italic;
   font-size: 0.95em;
   margin: 20px 0 20px;
@@ -91,10 +92,10 @@ img.shadow {
 select {
   -webkit-appearance: none;
   margin-top: 15px;
-  color: #337ab7;
-  border-color: #337ab7;
+  color: @link-color;
+  border-color: @link-color;
   padding: 0em 0.4em;
-  background: white;
+  background: @surface-bg;
   &.sel-lang {
     min-height: 28px;
     font-size: 14px;
@@ -109,7 +110,7 @@ table.table > tbody,
 table.table > thead {
   th,
   td {
-    border: 1px solid #eee !important;
+    border: 1px solid @border-color !important;
   }
 }
 @media screen and (max-width: 767px) {
@@ -122,7 +123,7 @@ hr.small {
   max-width: 100px;
   margin: 15px auto;
   border-width: 4px;
-  border-color: white;
+  border-color: @border-color-strong;
 }
 // add by Hux
 pre,
@@ -153,7 +154,7 @@ samp {
   a {
     // display: inline-block;
     // safari has bugs on word-break on inline elements.
-    color: #337ab7;
+    color: @link-color;
     // different to @brand-primary
     &:hover,
     &:focus {
@@ -175,14 +176,14 @@ samp {
   h2::before {
     content: " ";
     display: block;
-    border-bottom: 1px solid #ececec;
+    border-bottom: 1px solid @border-color;
     margin-top: 44px;
     margin-bottom: 30px;
   }
   h4 {
     font-size: 22px;
     font-weight: 600;
-    color: gray;
+    color: @brand-gray;
     & + p {
       margin-top: 10px;
     }
@@ -191,7 +192,7 @@ samp {
   h6 {
     font-size: 20px;
     font-weight: 600;
-    color: gray;
+    color: @brand-gray;
     & + p {
       margin-top: 10px;
     }
@@ -288,7 +289,7 @@ samp {
     position: absolute;
     right: 0;
     border: none;
-    background: white;
+    background: @surface-bg;
     box-shadow: 0px 5px 10px 2px rgba(0, 0, 0, 0.2);
     box-shadow: rgba(0, 0, 0, 0.117647) 0px 1px 6px,
       rgba(0, 0, 0, 0.239216) 0px 1px 4px;
@@ -386,7 +387,7 @@ samp {
         letter-spacing: 1px;
         // only highlight in mobile
         &:active {
-          background: rgba(0, 0, 0, 0.12);
+          background: rgba(255, 255, 255, 0.08);
         }
       }
     }
@@ -425,7 +426,7 @@ samp {
   &.invert {
     .navbar-toggle {
       &:active {
-        background-color: rgba(0, 0, 0, 0.05);
+        background-color: rgba(255, 255, 255, 0.08);
       }
       .icon-bar {
         background-color: @gray-dark;
@@ -466,8 +467,8 @@ samp {
       /* when the user scrolls down, we hide the header right above the viewport */
       position: fixed;
       top: -61px;
-      background-color: fade(white, 90%);
-      border-bottom: 1px solid darken(white, 5%);
+      background-color: fade(@body-bg, 90%);
+      border-bottom: 1px solid @border-color;
       -webkit-transition: -webkit-transform 0.3s;
       -moz-transition: -moz-transform 0.3s;
       transition: transform 0.3s;
@@ -522,7 +523,7 @@ samp {
         color: @gray-dark;
         &:hover,
         &:active {
-          background-color: rgba(0, 0, 0, 0.05);
+          background-color: rgba(255, 255, 255, 0.08);
         }
       }
     }
@@ -722,6 +723,16 @@ samp {
   border-bottom-left-radius: 5px;
 }
 
+// SNS icons ("logos") always use the accent red, regardless of where
+// sns-links.html is included (footer, sidebar mini-about-me, etc).
+.fa-stack {
+  color: @gm-red;
+}
+a:hover .fa-stack,
+a:focus .fa-stack {
+  color: lighten(@gm-red, 10%);
+}
+
 footer {
   font-size: 20px;
   padding: 50px 0 65px;
@@ -734,7 +745,7 @@ footer {
     text-align: center;
     margin-bottom: 0;
     a {
-      color: #337ab7;
+      color: @link-color;
       // different to @brand-primary
       &:hover,
       &:focus {
@@ -765,7 +776,7 @@ footer {
   &:focus {
     background-color: @brand-primary;
     border: 1px solid @brand-primary;
-    color: white;
+    color: @on-accent;
   }
 }
 
@@ -784,7 +795,7 @@ footer {
       font-weight: 800;
       letter-spacing: 1px;
       padding: 10px;
-      background-color: white;
+      background-color: @surface-bg;
       border-radius: 0;
       @media only screen and (min-width: 768px) {
         font-size: 14px;
@@ -797,13 +808,13 @@ footer {
     }
     > a:hover,
     > a:focus {
-      color: white;
+      color: @on-accent;
       background-color: @brand-primary;
       border: 1px solid @brand-primary;
 
       // V1.6 display title
       > span {
-        color: white;
+        color: @on-accent;
       }
     }
   }
@@ -814,7 +825,7 @@ footer {
     > a:focus,
     > span {
       color: @brand-gray;
-      background-color: @gray-dark;
+      background-color: @surface-bg;
       cursor: not-allowed;
     }
   }
@@ -823,13 +834,13 @@ footer {
 // -- Highlight Color Customization
 
 ::-moz-selection {
-  color: white;
+  color: @on-accent;
   text-shadow: none;
   background: @brand-primary;
 }
 
 ::selection {
-  color: white;
+  color: @on-accent;
   text-shadow: none;
   background: @brand-primary;
 }
@@ -875,7 +886,7 @@ img::-moz-selection {
     }
     &:hover,
     &:active {
-      color: white;
+      color: @on-accent;
       border-color: white;
       background-color: rgba(255, 255, 255, 0.4);
       text-decoration: none;
@@ -905,11 +916,12 @@ img::-moz-selection {
     line-height: 28px;
     margin: 0 2px;
     margin-bottom: 8px;
-    background: #f3f5f5;
+    background: @surface-bg;
     &:hover,
     &:active,
     &.focus {
-      background-color: #0085a1 !important;
+      background-color: @brand-primary !important;
+      color: @on-accent !important;
     }
     &.focus {
       box-shadow: rgba(0, 0, 0, 0.117647) 0 1px 6px,
@@ -917,11 +929,12 @@ img::-moz-selection {
     }
     &.tag-button--all {
       font-weight: 700;
-      color: #0085a1 !important;
+      color: @brand-primary !important;
       &:hover,
       &:active,
       &.focus {
-        background-color: #e4e4e4 !important;
+        background-color: @surface-hover !important;
+        color: @brand-primary !important;
       }
     }
   }
@@ -947,7 +960,7 @@ img::-moz-selection {
   }
 }
 .listing-seperator {
-  color: #0085a1;
+  color: @brand-primary;
   font-size: 21px !important;
   &::before {
     margin-right: 5px;

@@ -1,9 +1,50 @@
 // Variables
+//
+// Gruvbox Material Dark (medium contrast) palette.
+// https://github.com/sainnhe/gruvbox-material
 
-@brand-primary: #0085a1;
-@brand-gray: #a3a3a3;
+// -- Raw palette --
+@gm-bg-dim:      #1b1b1b;
+@gm-bg0:         #282828;
+@gm-bg1:         #32302f;
+@gm-bg3:         #45403d;
+@gm-bg5:         #5a524c;
+@gm-bg-statusline2: #3a3735; // used as a subtle hover/alt-surface shade
+@gm-bg-diff-red: #402120;
 
-@gray-dark: lighten(black, 25%);
-@gray-light: lighten(black, 75%);
+@gm-fg0: #d4be98;
+@gm-fg1: #ddc7a1;
 
-@white-faded: fade(white, 80%);
+@gm-red:    #ea6962;
+@gm-orange: #e78a4e;
+@gm-yellow: #d8a657;
+@gm-green:  #a9b665;
+@gm-aqua:   #89b482;
+@gm-blue:   #7daea3;
+@gm-purple: #d3869b;
+
+@gm-grey0: #7c6f64;
+@gm-grey1: #928374;
+@gm-grey2: #a89984;
+
+// -- Semantic aliases --
+// Kept under their original names so the rest of the theme's LESS files
+// (inherited from Hux Blog) didn't need to be rewired variable-by-variable.
+@brand-primary: @gm-aqua;   // links/hover, buttons, active states, accents
+@brand-gray:    @gm-grey1;  // secondary/meta text, header placeholder bg
+
+@gray-dark:  @gm-fg1;   // primary "readable" text (light-on-dark)
+@gray-light: @gm-grey2; // muted/secondary text (sidebar, faded copy)
+
+@white-faded: fade(white, 80%); // text sitting on top of hero photos
+
+// -- New tokens --
+// The original theme assumed a white page and never named these; a dark
+// theme needs them spelled out explicitly.
+@body-bg:       @gm-bg0;              // page background
+@surface-bg:    @gm-bg1;              // cards, dropdowns, code blocks, buttons
+@surface-hover: @gm-bg-statusline2;   // hover state for surface-bg elements
+@border-color:  @gm-bg3;
+@border-color-strong: @gm-bg5;
+@link-color: @gm-blue;
+@on-accent:  @gm-bg0; // text color used on top of solid @brand-primary fills
