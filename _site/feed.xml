@@ -3,10 +3,10 @@
   <channel>
     <title>daedalus</title>
     <description>Daedalus Blog</description>
-    <link>http://localhost:4000/</link>
-    <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml" />
-    <pubDate>Mon, 12 Oct 2026 15:28:17 -0500</pubDate>
-    <lastBuildDate>Mon, 12 Oct 2026 15:28:17 -0500</lastBuildDate>
+    <link>https://blog.paranimias.dev/</link>
+    <atom:link href="https://blog.paranimias.dev/feed.xml" rel="self" type="application/rss+xml" />
+    <pubDate>Mon, 12 Oct 2026 15:43:33 -0500</pubDate>
+    <lastBuildDate>Mon, 12 Oct 2026 15:43:33 -0500</lastBuildDate>
     <generator>Jekyll v4.4.1</generator>
     
       <item>
@@ -107,8 +107,8 @@ debate serio.&lt;/p&gt;
 &lt;!-- AUTO-GENERATED from Obsidian vault (es/nunca-se-trato-de-progreso.md) — do not edit directly, edit the vault note and run `npm run sync:obsidian` again. --&gt;
 </description>
         <pubDate>Sun, 11 Oct 2026 00:00:00 -0500</pubDate>
-        <link>http://localhost:4000/2026/10/11/nunca-se-trato-de-progreso/</link>
-        <guid isPermaLink="true">http://localhost:4000/2026/10/11/nunca-se-trato-de-progreso/</guid>
+        <link>https://blog.paranimias.dev/2026/10/11/nunca-se-trato-de-progreso/</link>
+        <guid isPermaLink="true">https://blog.paranimias.dev/2026/10/11/nunca-se-trato-de-progreso/</guid>
         
         <category>IA</category>
         

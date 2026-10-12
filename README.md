@@ -33,3 +33,24 @@ manda a `_drafts/` (el mecanismo nativo de borradores de Jekyll), así que no ap
 `npm run dev` ya incluye el watch del vault (junto con `grunt watch` y `jekyll serve`), así que
 con `OBSIDIAN_BLOG_DIR` exportado en la shell, un solo comando deja todo el flujo Obsidian →
 `_posts`/`_drafts` → sitio corriendo en vivo.
+
+## Publicar el sitio (build de producción)
+
+`bundle exec jekyll serve` trabaja en modo desarrollo y reemplaza `url` por `http://localhost:4000`,
+así que el `_site/` generado así tiene URLs de localhost en los metadatos (`og:image`, `og:url`...).
+Para publicar hay que generar el build en modo producción, que respeta `url` de `_config.yml`
+(`https://blog.paranimias.dev`):
+
+```sh
+JEKYLL_ENV=production bundle exec jekyll build
+```
+
+## Previews al compartir (Open Graph)
+
+- La imagen de preview es `img/paranimias-og.png`, referenciada en `_includes/head.html`. Se usa PNG
+  y no WebP porque Facebook no soporta bien WebP en `og:image`; si se cambia la imagen, hay que
+  mantener el formato PNG/JPG (y actualizar `og:image:width`/`height`/`type` si cambian).
+- Facebook recomienda al menos 600×315 (idealmente 1200×630); con 350×349 la tarjeta sale pequeña.
+- Para depurar usa siempre la URL real (`https://blog.paranimias.dev/`) en el
+  [Sharing Debugger](https://developers.facebook.com/tools/debug/); localhost nunca funciona.
+  Pulsa "Scrape Again" para limpiar la caché de Facebook tras publicar cambios.
