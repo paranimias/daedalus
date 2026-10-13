@@ -12,9 +12,17 @@ layout: null
     <lastBuildDate>{{ site.time | date_to_rfc822 }}</lastBuildDate>
     <generator>Jekyll v{{ jekyll.version }}</generator>
     {% for post in site.posts limit:10 %}
+      {% assign es_content = post.content | split: '<div class="en post-container">' | first %}
+      {% assign post_link = post.url | prepend: site.baseurl | prepend: site.url %}
+      {% comment %} MathJax needs JS, which feed readers don't run: posts with LaTeX get an excerpt + link instead of the full body. {% endcomment %}
+      {% if post.mathjax %}
+        {% capture feed_body %}<p>{{ es_content | strip_html | strip_newlines | truncatewords: 60 }}</p><p><em>Esta entrada contiene fórmulas matemáticas que no se muestran en el lector RSS. <a href="{{ post_link }}">Léela completa en el blog</a>.</em></p>{% endcapture %}
+      {% else %}
+        {% assign feed_body = es_content %}
+      {% endif %}
       <item>
         <title>{{ post.title | xml_escape }}</title>
-        <description>{{ post.content | xml_escape }}</description>
+        <description>{{ feed_body | xml_escape }}</description>
         <pubDate>{{ post.date | date_to_rfc822 }}</pubDate>
         <link>{{ post.url | prepend: site.baseurl | prepend: site.url }}</link>
         <guid isPermaLink="true">{{ post.url | prepend: site.baseurl | prepend: site.url }}</guid>
