@@ -1,13 +1,19 @@
 ---
-layout: post
 title: Nunca se trató de progreso
+subtitle: o cómo no dejarnos engañar
+description: Cómo la Inteligencia Artificial ha nublado nuestra visión de las ciencias
 author: paranimias
 date: '2026-10-11'
+header-img: null
+header-mask: null
+header-img-credit: null
+header-img-credit-href: null
 multilingual: false
 mathjax: false
 tags:
   - IA
   - Redes Sociales
+layout: post
 ---
 Llevo los últimos cinco años luchando por no caer en toda la ola de *ragebait* en redes sociales por culpa de
 la IA. Sin embargo el último año ha sido más dificil que nunca, y en vez de estar discutiendo con posibles

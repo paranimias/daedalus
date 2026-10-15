@@ -226,6 +226,7 @@
     function _render() {
         var lang = getLang()
         var postTitle = document.querySelector(".post-title");
+        var postSubtitle = document.querySelector(".intro-header .subheading");
         // en
         if (lang == "en") {
             $select.selectedIndex = 1;
@@ -236,6 +237,9 @@
             if (postTitle && postTitle.getAttribute("data-en-title")) {
                 postTitle.innerText = postTitle.getAttribute("data-en-title");
             }
+            if (postSubtitle && postSubtitle.getAttribute("data-en-subtitle")) {
+                postSubtitle.innerText = postSubtitle.getAttribute("data-en-subtitle");
+            }
             // default to es
         } else {
             $select.selectedIndex = 0;
@@ -245,6 +249,9 @@
             $en.classList.remove("active");
             if (postTitle && postTitle.getAttribute("data-es-title")) {
                 postTitle.innerText = postTitle.getAttribute("data-es-title");
+            }
+            if (postSubtitle && postSubtitle.getAttribute("data-es-subtitle")) {
+                postSubtitle.innerText = postSubtitle.getAttribute("data-es-subtitle");
             }
         }
         // interop with catalog 

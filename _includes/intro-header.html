@@ -29,9 +29,19 @@
 <header class="intro-header" >
 {% endif %}
     <div class="header-mask"></div>
-    {% if page.header-img-credit or site.header-img-credit %}
+    {% comment %} The site-wide credit belongs to the site-wide image: a page with its own header-img only shows its own credit. {% endcomment %}
+    {% if page.header-img-credit %}
+        {% assign credit = page.header-img-credit %}
+        {% assign credit_href = page.header-img-credit-href %}
+    {% elsif page.header-img == nil %}
+        {% assign credit = site.header-img-credit %}
+        {% assign credit_href = site.header-img-credit-href %}
+    {% else %}
+        {% assign credit = nil %}
+    {% endif %}
+    {% if credit %}
     <div class="header-img-credit">
-        Painting by <a target="_blank" href="{% if page.header-img-credit-href %}{{page.header-img-credit-href}}{% else %}{{site.header-img-credit-href}}{% endif %}">{% if page.header-img-credit %}{{page.header-img-credit}}{% else %}{{site.header-img-credit}}{% endif %}</a>
+        Autor: {% if credit_href %}<a target="_blank" href="{{ credit_href }}">{{ credit }}</a>{% else %}{{ credit }}{% endif %}
     </div>
     {% endif %}
     <div class="container">
@@ -45,7 +55,7 @@
                     </div>
                     <h1 class="post-title" {% if page.en_title %}data-en-title="{{ page.en_title }}" data-es-title="{{ page.title }}"{% endif %}>{{ page.title }}</h1>
                     {% comment %} always create a h2 for keeping the margin {% endcomment %}
-                    <h2 class="subheading">{{ page.subtitle }}</h2>
+                    <h2 class="subheading" {% if page.en_subtitle %}data-en-subtitle="{{ page.en_subtitle }}" data-es-subtitle="{{ page.subtitle }}"{% endif %}>{{ page.subtitle }}</h2>
                     <span class="meta"> Publicado por {% if page.author %}{{ page.author }}{% else %}{{
                             site.title }}{% endif %} el {{ page.date | date: "%d/%m/%Y" }}</span>
                 </div>
@@ -99,7 +109,7 @@
   <div class="header-mask"></div>
   {% if page.header-img-credit or site.header-img-credit %}
   <div class="header-img-credit">
-      Painting by <a target="_blank" href="{% if page.header-img-credit-href %}{{page.header-img-credit-href}}{% else %}{{site.header-img-credit-href}}{% endif %}">{% if page.header-img-credit %}{{page.header-img-credit}}{% else %}{{site.header-img-credit}}{% endif %}</a>
+      Autor: <a target="_blank" href="{% if page.header-img-credit-href %}{{page.header-img-credit-href}}{% else %}{{site.header-img-credit-href}}{% endif %}">{% if page.header-img-credit %}{{page.header-img-credit}}{% else %}{{site.header-img-credit}}{% endif %}</a>
   </div>
   {% endif %}
   <div class="container">
