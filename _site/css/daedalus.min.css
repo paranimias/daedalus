@@ -1,8 +1,3 @@
-/*!
- * daedalus v1.8.2 (paranimias.github.io)
- * Copyright 2026 paranimias
- */
-
 @media (min-width: 1200px) {
   .post-container,
   .sidebar-container {
@@ -560,6 +555,113 @@ pre.highlight {
 .search-icon,
 .search-icon-close {
   font-size: 16px;
+}
+.markdown-alert {
+  margin: 25px 0;
+  padding: 12px 18px;
+  border-left: 4px solid #5a524c;
+  border-radius: 4px;
+  background-color: #32302f;
+}
+.markdown-alert > :first-child {
+  margin-top: 0;
+}
+.markdown-alert > :last-child {
+  margin-bottom: 0;
+}
+.markdown-alert p {
+  margin: 10px 0;
+}
+.markdown-alert .markdown-alert-title {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-weight: bold;
+  margin: 0 0 8px;
+  font-size: 0;
+}
+.markdown-alert .markdown-alert-title::after {
+  font-size: 16px;
+}
+.markdown-alert.markdown-alert-note {
+  border-left-color: #7daea3;
+  background-color: rgba(125, 174, 163, 0.08);
+}
+.markdown-alert.markdown-alert-note .markdown-alert-title {
+  color: #7daea3;
+}
+.markdown-alert.markdown-alert-note svg {
+  fill: #7daea3;
+}
+.markdown-alert.markdown-alert-note .markdown-alert-title::after {
+  content: "Nota";
+}
+.en .markdown-alert.markdown-alert-note .markdown-alert-title::after {
+  content: "Note";
+}
+.markdown-alert.markdown-alert-tip {
+  border-left-color: #a9b665;
+  background-color: rgba(169, 182, 101, 0.08);
+}
+.markdown-alert.markdown-alert-tip .markdown-alert-title {
+  color: #a9b665;
+}
+.markdown-alert.markdown-alert-tip svg {
+  fill: #a9b665;
+}
+.markdown-alert.markdown-alert-tip .markdown-alert-title::after {
+  content: "Consejo";
+}
+.en .markdown-alert.markdown-alert-tip .markdown-alert-title::after {
+  content: "Tip";
+}
+.markdown-alert.markdown-alert-important {
+  border-left-color: #d3869b;
+  background-color: rgba(211, 134, 155, 0.08);
+}
+.markdown-alert.markdown-alert-important .markdown-alert-title {
+  color: #d3869b;
+}
+.markdown-alert.markdown-alert-important svg {
+  fill: #d3869b;
+}
+.markdown-alert.markdown-alert-important .markdown-alert-title::after {
+  content: "Importante";
+}
+.en .markdown-alert.markdown-alert-important .markdown-alert-title::after {
+  content: "Important";
+}
+.markdown-alert.markdown-alert-warning {
+  border-left-color: #d8a657;
+  background-color: rgba(216, 166, 87, 0.08);
+}
+.markdown-alert.markdown-alert-warning .markdown-alert-title {
+  color: #d8a657;
+}
+.markdown-alert.markdown-alert-warning svg {
+  fill: #d8a657;
+}
+.markdown-alert.markdown-alert-warning .markdown-alert-title::after {
+  content: "Advertencia";
+}
+.en .markdown-alert.markdown-alert-warning .markdown-alert-title::after {
+  content: "Warning";
+}
+.markdown-alert.markdown-alert-caution {
+  border-left-color: #ea6962;
+  background-color: rgba(234, 105, 98, 0.08);
+}
+.markdown-alert.markdown-alert-caution .markdown-alert-title {
+  color: #ea6962;
+}
+.markdown-alert.markdown-alert-caution svg {
+  fill: #ea6962;
+}
+.markdown-alert.markdown-alert-caution .markdown-alert-title::after {
+  content: "Precaución";
+}
+.en .markdown-alert.markdown-alert-caution .markdown-alert-title::after {
+  content: "Caution";
 }
 body {
   /* Hux learn from

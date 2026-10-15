@@ -1,0 +1,44 @@
+// GFM admonitions (jekyll-gfm-admonitions), colored with Gruvbox Material accents.
+.admonition-variant(@color) {
+  border-left-color: @color;
+  background-color: fade(@color, 8%);
+  .markdown-alert-title { color: @color; }
+  svg { fill: @color; }
+}
+
+// Titles: the plugin hardcodes English text. Hide it and draw our own,
+// Spanish by default (single-language posts have no .es/.en wrapper),
+// English inside .en blocks.
+.admonition-title(@es, @en) {
+  .markdown-alert-title::after { content: @es; }
+  .en & .markdown-alert-title::after { content: @en; }
+}
+
+.markdown-alert {
+  margin: 25px 0;
+  padding: 12px 18px;
+  border-left: 4px solid @border-color-strong;
+  border-radius: 4px;
+  background-color: @surface-bg;
+
+  > :first-child { margin-top: 0; }
+  > :last-child  { margin-bottom: 0; }
+
+  p { margin: 10px 0; }
+
+  .markdown-alert-title {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-weight: bold;
+    margin: 0 0 8px;
+    font-size: 0; // hides the English text node
+    &::after { font-size: 16px; }
+  }
+
+  &.markdown-alert-note      { .admonition-variant(@gm-blue);   .admonition-title("Nota", "Note"); }
+  &.markdown-alert-tip       { .admonition-variant(@gm-green);  .admonition-title("Consejo", "Tip"); }
+  &.markdown-alert-important { .admonition-variant(@gm-purple); .admonition-title("Importante", "Important"); }
+  &.markdown-alert-warning   { .admonition-variant(@gm-yellow); .admonition-title("Advertencia", "Warning"); }
+  &.markdown-alert-caution   { .admonition-variant(@gm-red);    .admonition-title("Precaución", "Caution"); }
+}

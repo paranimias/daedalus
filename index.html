@@ -20,6 +20,8 @@ description: "/ˈdae̯.da.ɫʊs/"
         <div class="post-content-preview">
             {% assign preview_content = post.content | split: '<!-- English Version -->' | first | split:
             '<!-- Spanish Version -->' | last %}
+            {% comment %} Drop the (English) admonition titles so they don't leak into the plain-text preview. {% endcomment %}
+            {% assign preview_content = preview_content | remove: '</svg> Note</p>' | remove: '</svg> Tip</p>' | remove: '</svg> Important</p>' | remove: '</svg> Warning</p>' | remove: '</svg> Caution</p>' %}
             {{ preview_content | strip_html | truncate:200 }}
         </div>
     </a>
