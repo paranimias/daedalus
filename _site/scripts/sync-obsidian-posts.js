@@ -157,7 +157,9 @@ function sync() {
     let hasTranslation = enFiles.has(filename);
     let en = hasTranslation ? readNote(enDir, filename) : null;
     if (hasTranslation) enFiles.delete(filename);
-    if (en && isInProgress(en.data)) {
+    // When es/ is itself a draft, keep the in-progress translation so the
+    // bilingual draft can be previewed.
+    if (en && isInProgress(en.data) && !isDraft) {
       console.log(`note: en/${filename} is in-progress — publishing/drafting es/${filename} without it`);
       hasTranslation = false;
       en = null;

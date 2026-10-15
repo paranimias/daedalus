@@ -18,8 +18,7 @@ description: "/ˈdae̯.da.ɫʊs/"
         </h3>
         {% endif %}
         <div class="post-content-preview">
-            {% assign preview_content = post.content | split: '<!-- English Version -->' | first | split:
-            '<!-- Spanish Version -->' | last %}
+            {% assign preview_content = post.content | split: '<div class="en post-container">' | first %}
             {% comment %} Drop the (English) admonition titles so they don't leak into the plain-text preview. {% endcomment %}
             {% assign preview_content = preview_content | remove: '</svg> Note</p>' | remove: '</svg> Tip</p>' | remove: '</svg> Important</p>' | remove: '</svg> Warning</p>' | remove: '</svg> Caution</p>' %}
             {{ preview_content | strip_html | truncate:200 }}

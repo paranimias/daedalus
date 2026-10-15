@@ -36,10 +36,10 @@
         ">
             <span
                 style="font-size: 0.65em; text-transform: uppercase; letter-spacing: 1px; opacity: 0.8; margin-bottom: 2px;"
-                id="lastfm-status">Loading...</span>
+                id="lastfm-status">Cargando...</span>
             <span style="font-weight: 600; font-size: 1.05em; line-height: 1.2;
                 display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; text-overflow: ellipsis;
-            " id="lastfm-track">Connecting to Last.fm</span>
+            " id="lastfm-track">Conectando a Last.fm</span>
             <span style="font-size: 0.8em; opacity: 0.9; margin-top: 2px;
                 white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
             " id="lastfm-artist"></span>
@@ -56,7 +56,7 @@
         const artistEl = document.getElementById("lastfm-artist");
         const widget = document.getElementById("lastfm-widget");
 
-        statusEl.innerText = "UPDATING...";
+        statusEl.innerText = "ACTUALIZANDO...";
 
         // Usamos Vercel para sacar la información
         fetch(VERCEL_URL)
@@ -73,7 +73,7 @@
                 if (albumArt) widget.style.backgroundImage = `url(${albumArt})`;
                 
                 if (track["@attr"] && track["@attr"].nowplaying === "true") {
-                    statusEl.innerHTML = '<i class="fa fa-music" style="color: #a9b665;"></i> NOW PLAYING';
+                    statusEl.innerHTML = '<i class="fa fa-music" style="color: #a9b665;"></i> REPRODUCIENDO';
                 } else if (track.date && track.date.uts) {
                     const timeString = timeAgo(track.date.uts);
                     statusEl.innerHTML = `<i class="fa fa-history"></i> ${timeString}`;

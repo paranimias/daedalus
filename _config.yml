@@ -74,7 +74,7 @@ ga_domain: ""
 
 # Sidebar settings
 sidebar: true # whether or not using Sidebar.
-sidebar-about-description: "Computer Scientist<br/>Linux and Vim enthusiast"
+sidebar-about-description: "Científico de la Computación<br/>con un profundo amor por<br/>Linux"
 sidebar-avatar: "/img/paranimias.webp"
 
 # Featured Tags
@@ -93,11 +93,4 @@ friends:
   [
     { title: "Juan Huertas", href: "https://github.com/spartan14799/" },
     { title: "Valentina 💘", href: "http://instagram.com/vaschita" },
-#     { title: "Ebn Zhang", href: "https://ebnbin.dev/" },
-#     { title: "Kun Qian", href: "http://kunq.me" },
-#     { title: "Sherry Woo", href: "https://sherrywoo.me/" },
-#     { title: "SmdCn", href: "http://blog.smdcn.net" },
-#     { title: "JiyinYiyong", href: "http://tiye.me/" },
-#     { title: "DHong Say", href: "http://dhong.co" },
-#     { title: "尹峰以为", href: "http://ingf.github.io/" },
 ]

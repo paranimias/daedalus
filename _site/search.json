@@ -1,35 +1,11 @@
 [
   
     {
-      "title"    : "Test admonitions",
-      "subtitle" : "",
-      "tags"     : "test",
-      "url"      : "/2026/10/14/test-admonitions/",
-      "date"     : "2026-10-14 00:00:00 -0500"
-    } ,
-  
-    {
       "title"    : "Nunca se trató de progreso",
       "subtitle" : "",
       "tags"     : "IA, Redes Sociales",
       "url"      : "/2026/10/11/nunca-se-trato-de-progreso/",
       "date"     : "2026-10-11 00:00:00 -0500"
-    } ,
-  
-    {
-      "title"    : "Granjas de Contenido",
-      "subtitle" : "",
-      "tags"     : "AI, youtube",
-      "url"      : "/2026/08/09/primer-post/",
-      "date"     : "2026-08-09 00:00:00 -0500"
-    } ,
-  
-    {
-      "title"    : "/mu/michis semana 3",
-      "subtitle" : "",
-      "tags"     : "/mu/michis",
-      "url"      : "/2026/08/09/mumichis-semana-3/",
-      "date"     : "2026-08-09 00:00:00 -0500"
     } 
   
 ]
